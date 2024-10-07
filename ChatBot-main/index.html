@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot de One Piece</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="Tema/change.js"></script>
+</head>
+<body class="light-theme">
+    <button onclick="trocar()">Trocar
+      <button id="theme-toggle"> <img src="icons8-moon-50.png" alt="Moon">
+      </button>
+    </button>
+
+    <style>
+    body {
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .light-theme {
+        background-color: rgb(255, 255, 255);
+        color:rgb(26, 42, 109);
+    }
+    .dark-theme {
+        background-color: rgb(26, 42, 109);
+        color:  rgb(255, 255, 255);
+    }
+    </style>
+
+    <script>
+        const button = document.getElementById('theme-toggle');
+        button.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            document.body.classList.toggle('light-theme');
+            button.textContent = document.body.classList.contains('dark-theme') ? 'Mudar para Claro' : 'Mudar para Escuro';
+        });
+    </script>
+
+<div class="conteiner">
+    <h1>Chatbot sobre One Piece</h1>
+    <div class="chatbox" id="chatbox">
+            <div class="message bot-message">Olá! Pergunte-me qualquer coisa sobre One Piece!</div>
+    </div>
+
+    <div class="input-box">
+            <input type="text" id="userInput" placeholder="Escreva sua mensagem aqui">
+            <button onclick="sendMessage()">Enviar</button>
+    </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
